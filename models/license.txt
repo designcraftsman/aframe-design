@@ -1,0 +1,11 @@
+Model Information:
+* title:	Giraffe
+* source:	https://sketchfab.com/3d-models/giraffe-e73c5c4354af4af4af46b711f5a8a972
+* author:	GentryHS EAST (https://sketchfab.com/gentryhsEAST)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Giraffe" (https://sketchfab.com/3d-models/giraffe-e73c5c4354af4af4af46b711f5a8a972) by GentryHS EAST (https://sketchfab.com/gentryhsEAST) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
