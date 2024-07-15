@@ -1,0 +1,11 @@
+Model Information:
+* title:	Person
+* source:	https://sketchfab.com/3d-models/person-bcd49ca3bcfb43739fd90a8dbfcf5319
+* author:	scanontherun (https://sketchfab.com/scanontherun)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Person" (https://sketchfab.com/3d-models/person-bcd49ca3bcfb43739fd90a8dbfcf5319) by scanontherun (https://sketchfab.com/scanontherun) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

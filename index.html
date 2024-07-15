@@ -2,29 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! - A-Frame</title>
+    <title>Architecture des ordinateurs</title>
     <meta name="description" content="Hello, World! - A-Frame">
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-extras@6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <a-scene cursor="rayOrigin: mouse" background="color: #008000">
+    <a-scene loading-screen="dotsColor: red; backgroundColor: black" >  
       <a-assets>
-        <!-- Load the GLTF model -->
-        <a-asset-item id="treeModel" src="models/scene.gltf" ></a-asset-item>
+        <a-asset-item id="Monitor" src="desktop/scene.gltf"></a-asset-item>
+        <a-asset-item id="Person" src="person/scene.gltf"></a-asset-item>
+        <a-asset-item id="Chair" src="chair/scene.gltf"></a-asset-item>
+        <a-asset-item id="Light" src="light/scene.gltf"></a-asset-item>
+        <a-asset-item id="Cpu" src="cpu/scene.gltf"></a-asset-item>
+        <a-asset-item id="Fan" src="fan/scene.gltf"></a-asset-item>
+        <a-asset-item id="HardDisk" src="hardDisk/scene.gltf"></a-asset-item>
+        <a-asset-item id="MotherBoard" src="motherboard/scene.gltf"></a-asset-item>
+        <a-asset-item id="Ram" src="ram/scene.gltf"></a-asset-item>
+        
+        <img id="floor" src="assets/floor.jpg">
+        <img id="walls" src="assets/wall.jpg">
+        <img id="table" src="assets/wall.jpg">
+        <img id="sky" src="assets/sky3.jpg" >
+          <video id="tutorial"  loop="true" src="assets/tutorial.mp4"></video>
       </a-assets>
-
-      <!-- Add environment -->
-      <a-entity environment="preset: forest"></a-entity>
-    
-      <!-- A-Frame Hello World scene -->
+      <a-sky src="#sky"></a-sky>
+      <!-- Environment Setup -->
+      <a-plane class="collidable" position="0 0 0" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="40 0 0" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="-40 0 0" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="0 0 100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="0 0 -100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="80 0 0" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="-80 0 0" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="40 0 100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="-40 0 100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="40 0 -100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-plane class="collidable" position="-40 0 -100" rotation="-90 0 0" width="40" height="100" src="#floor" static-body></a-plane>
+      <a-box class="collidable" position="0 12 -20" width="40" height="25" depth="2" src="#walls" static-body></a-box>
       
-      <a-plane position="0 0.5 -4" rotation="-90 0 0" width="20" height="20" color="gray"></a-plane>
-    
-      <!-- Add the GLTF model -->z
-      <a-entity gltf-model="#treeModel" position="0 3 -5" scale="0.5 0.5 0.5" animation=""></a-entity>
-    
-      <!-- Camera & Controls -->
-      <a-entity camera position="0 4 0" look-controls wasd-controls></a-entity>
+      <a-box class="collidable" position="20 12 0" width="2" height="25" depth="40" src="#walls" static-body></a-box>
+      <a-box class="collidable" position="-20 12 0" width="2" height="25" depth="40" src="#walls" static-body></a-box>
+      <a-box class="collidable" position="0 25 0" width="40" height="2" depth="40" src="#walls" static-body></a-box>
+      <a-box class="collidable" position="0 1 -18" width="40" height="3" depth="4" src="#table" static-body></a-box>  
+
+      
+      <a-box class="collidable" position="0 0 0" width="20" height="7" depth="4" rotation="0 90 0" src="#table" static-body></a-box>
+      <a-entity class="collidable pdf" gltf-model="#Fan" position="0 3.7 -6" scale="0.01 0.01 0.01"  static-body></a-entity>
+      <a-entity class="collidable pdf" gltf-model="#HardDisk" position="0 3.7 2" scale="0.01 0.01 0.01"  static-body></a-entity>
+
+      <a-box class="collidable" position="10 0 0" width="20" height="7" depth="4" rotation="0 90 0" src="#table" static-body></a-box>
+      <a-entity class="collidable pdf" gltf-model="#Ram" position="10 4.2 -6" scale="1 1 1"  static-body></a-entity>
+      <a-entity class="collidable pdf" gltf-model="#MotherBoard" position="10 2.5 2" scale="0.1 0.1 0.1"  static-body></a-entity>
+
+
+      <a-entity class="collidable pdf"  gltf-model="#Monitor" position="-16 2.5 -18" scale="1 1 1" rotation="0 0 0" static-body></a-entity>
+      <a-entity class="collidable" gltf-model="#Person" position="-16 3.5 -8" scale="3.5 3.5 3.5" rotation="-10 45 0" static-body></a-entity>
+      <a-entity class="collidable" gltf-model="#Chair" position="-16 0 -12" scale="0.03 0.03 0.03" rotation="0 90 0" static-body></a-entity>
+      <a-entity class="collidable" gltf-model="#Light" position="0 21 0" scale="10 10 10"></a-entity>
+
+       <a-video src="#tutorial" id="videoTutorial" width="25" height="12" position="0 12 -18.5"></a-video>
+      <!-- User -->
+      <a-entity id="camera" camera custom-look-controls look-controls camera-collider="speed: 0.1; radius: 0.5" position="0 5 30">
+        <a-cursor></a-cursor>
+      </a-entity>
+
+      <iframe id="pdfViewer">
+
+      </iframe>
+      <button id="closeButton">Close</button>
     </a-scene>
   </body>
 </html>

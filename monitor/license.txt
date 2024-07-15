@@ -1,0 +1,11 @@
+Model Information:
+* title:	Computer Monitor 16:9 (Low Poly, Game Ready)
+* source:	https://sketchfab.com/3d-models/computer-monitor-169-low-poly-game-ready-336de680dd9a4d84943d05d9c7dde1b0
+* author:	Skript47 (https://sketchfab.com/Skript47)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Computer Monitor 16:9 (Low Poly, Game Ready)" (https://sketchfab.com/3d-models/computer-monitor-169-low-poly-game-ready-336de680dd9a4d84943d05d9c7dde1b0) by Skript47 (https://sketchfab.com/Skript47) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
