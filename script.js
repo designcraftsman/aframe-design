@@ -178,9 +178,16 @@ AFRAME.registerComponent('custom-look-controls', {
     closeButton.addEventListener('click', closePDF);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('videoTutorial');
-  setTimeout(() => {
-    video.play();
-  }, 5000); // 5000 milliseconds = 5 seconds delay
+AFRAME.registerComponent('loading-manager', {
+  init: function () {
+    var loadingScreen = document.getElementById('loadingScreen');
+    var mainContent =document.getElementById('mainContent');
+    this.el.addEventListener('loaded', function () {
+      setTimeout(function() {
+        loadingScreen.style.display = 'none';
+        mainContent.style.visibility = 'visible';
+      }, 10000);
+    });
+  }
 });
+document.getElementById('mainScene').setAttribute('loading-manager', '');
